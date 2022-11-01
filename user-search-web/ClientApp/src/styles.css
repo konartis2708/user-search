@@ -4,11 +4,13 @@
 
 :root {
   --background-color: #000;
+  --secondary-background-color: #fff;
   --primary-text-color: #fff;
   --btn-bg-hover-color: #e51e59;
   --btn-bg-color: #bc1546;
   --btn-text-color: #fff;
   --border-radius: 16px;
+  --error-color:#bc1546
 }
 
 body {
@@ -51,4 +53,18 @@ footer {
   display: flex;
   margin-bottom: 3rem;
   justify-content: center;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }

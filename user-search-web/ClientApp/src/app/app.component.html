@@ -2,7 +2,7 @@
   <div class="container">
     <header></header>
     <app-user-search></app-user-search>
-    <app-add-user></app-add-user>
+    <app-add-user *ngIf="showAddUser"></app-add-user>
     <footer>
       <lib-button (clicked)="NewUserClicked()">New User +</lib-button>
     </footer>
