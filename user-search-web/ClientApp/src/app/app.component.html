@@ -1,6 +1,10 @@
 <body>
-  <app-nav-menu></app-nav-menu>
   <div class="container">
-    <router-outlet></router-outlet>
+    <header></header>
+    <app-user-search></app-user-search>
+    <app-add-user></app-add-user>
+    <footer>
+      <lib-button (clicked)="NewUserClicked()">New User +</lib-button>
+    </footer>
   </div>
 </body>

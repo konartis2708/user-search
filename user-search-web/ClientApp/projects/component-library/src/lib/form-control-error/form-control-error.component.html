@@ -1,0 +1,10 @@
+<div
+  *ngIf="control.invalid && (control.dirty || control.touched)"
+  class="alert"
+>
+  <div *ngIf="control.errors?.required">Please enter {{ displayName }}</div>
+  <div *ngIf="control.errors?.maxLength">{{ displayName }} is too long</div>
+  <div *ngIf="control.errors?.email">
+    Please enter a valid {{ displayName }}
+  </div>
+</div>

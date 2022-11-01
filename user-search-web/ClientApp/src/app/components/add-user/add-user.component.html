@@ -1,0 +1,34 @@
+<form (submitted)="CreateUser()" [formGroup]="userFormGroup">
+  <div>
+    <input type="text" placeholder="First name" formControlName="firstName" />
+    <lib-form-control-error
+      [control]="userFormGroup.controls.firstName"
+      [displayName]="'First name'"
+    ></lib-form-control-error>
+    <input type="text" placeholder="Last name" formControlName="lastName" />
+    <lib-form-control-error
+      [control]="userFormGroup.controls.lastName"
+      [displayName]="'Last name'"
+    ></lib-form-control-error>
+  </div>
+  <div>
+    <input type="text" placeholder="Job title" formControlName="jobTitle" />
+    <lib-form-control-error
+      [control]="userFormGroup.controls.jobTitle"
+      [displayName]="'Job title'"
+    ></lib-form-control-error>
+    <input type="text" placeholder="Phone" formControlName="phone" />
+    <lib-form-control-error
+      [control]="userFormGroup.controls.phone"
+      [displayName]="'Phone number'"
+    ></lib-form-control-error>
+    <input type="text" placeholder="Email" formControlName="email" />
+    <lib-form-control-error
+      [control]="userFormGroup.controls.email"
+      [displayName]="'Email'"
+    ></lib-form-control-error>
+  </div>
+  <div>
+    <button class="btn-primary" type="submit">Create</button>
+  </div>
+</form>

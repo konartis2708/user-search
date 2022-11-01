@@ -1,0 +1,10 @@
+<div>
+  <lib-search-box (textChanged)="SearchUsers($event)"></lib-search-box>
+  <lib-search-results
+    *ngIf="matchedUsers$ | async as matchedUsers"
+    [results]="matchedUsers"
+  ></lib-search-results>
+</div>
+<div class="search-results">
+  <app-user-card *ngFor="let user of users" [user]="user"></app-user-card>
+</div>

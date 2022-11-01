@@ -1,0 +1,11 @@
+.card {
+    border-color: white;
+    border-radius: var(--border-radius);
+    padding: 1rem 3rem;
+    background-color: var(--background-color);
+}
+
+.card-items {
+    list-style: none;
+    padding-left: 1rem;
+}

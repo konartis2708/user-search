@@ -1,0 +1,10 @@
+:host {
+    flex-grow: 1;
+}
+
+.auto-complete-input {
+    width:auto;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
