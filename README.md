@@ -1,6 +1,6 @@
 # User Search
 ## where to find the code
--the api project can be found in /user-search-web
+- the solution for visual studio can be found in /user-search-web
 - the angular code can be found in /user-search-web/ClientApp
 
 ## acceptance criteria progress
