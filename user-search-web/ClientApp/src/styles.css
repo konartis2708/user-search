@@ -6,8 +6,10 @@
   --background-color: #000;
   --secondary-background-color: #fff;
   --primary-text-color: #fff;
+  --secondary-text-color: #000;
   --btn-bg-hover-color: #e51e59;
   --btn-bg-color: #bc1546;
+  --border-color: #bc1546;
   --btn-text-color: #fff;
   --border-radius: 16px;
   --error-color:#bc1546
@@ -19,6 +21,12 @@ body {
   display:flex;
   flex-direction: column;
   height: 100vh;
+}
+
+header {
+  padding-top: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: right;
 }
 
 .container {
@@ -68,3 +76,30 @@ footer {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+
+.auto-complete-results {
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-background-color);
+  border-radius: var(--border-radius);
+  position: absolute;
+  z-index: 1;
+  margin-top: .5rem;
+  padding: 1rem;
+  font-size: .75rem;
+  border: solid 1px var(--border-color);
+  width: 53vw;
+}
+
+.result-items {
+  margin-bottom: .5rem;
+  cursor: pointer;
+}
+
+.result-items:last-of-type {
+  margin-bottom: 0;
+}
+
+.highlight-term {
+  background-color: yellow;
+}
+

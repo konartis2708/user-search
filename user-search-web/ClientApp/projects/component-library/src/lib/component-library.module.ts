@@ -6,6 +6,8 @@ import { ButtonComponent } from './button/button.component';
 import { CardComponent } from './card/card.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { FormControlErrorComponent } from './form-control-error/form-control-error.component';
+import { SearchResultHighlightPipe } from './pipe/search-result-highlight.pipe';
+import { AlertComponent } from './alert/alert.component';
 
 
 
@@ -15,7 +17,9 @@ import { FormControlErrorComponent } from './form-control-error/form-control-err
     ButtonComponent,
     CardComponent,
     SearchResultsComponent,
-    FormControlErrorComponent
+    FormControlErrorComponent,
+    SearchResultHighlightPipe,
+    AlertComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,9 @@ import { FormControlErrorComponent } from './form-control-error/form-control-err
     ButtonComponent,
     CardComponent,
     SearchResultsComponent,
-    FormControlErrorComponent
+    FormControlErrorComponent,
+    SearchResultHighlightPipe,
+    AlertComponent
   ]
 })
 export class ComponentLibraryModule { }

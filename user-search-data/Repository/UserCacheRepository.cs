@@ -28,6 +28,13 @@ namespace user_search_data.Repository
 
         public IEnumerable<User> QueryUsers(string searchText)
         {
+           var exactMatch = users.Where(u => $"{u.FirstName} {u.LastName}" == searchText);
+
+            if (exactMatch != null && exactMatch.Any())
+            {
+                return exactMatch;
+            }
+
             return users.Where(u => u.FirstName.Contains(searchText, StringComparison.InvariantCultureIgnoreCase) || u.LastName.Contains(searchText, StringComparison.InvariantCultureIgnoreCase));
         }
     }

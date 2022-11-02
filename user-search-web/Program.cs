@@ -17,6 +17,14 @@ builder.Services.AddSingleton<IUserRepository, UserCacheRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 var app = builder.Build();
 
 app.UseSwaggerUI();
@@ -33,6 +41,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseSwagger(x => x.SerializeAsV2 = true);
+
+app.UseCors("CorsPolicy");
 
 app.MapControllerRoute(
     name: "default",

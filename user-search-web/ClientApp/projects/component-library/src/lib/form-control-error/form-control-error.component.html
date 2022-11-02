@@ -1,4 +1,4 @@
-<div *ngIf="control.invalid && (control.dirty || control.touched)">
+<div *ngIf="control && control.invalid && (control.dirty || control.touched)">
   <p class="error" *ngIf="control.errors?.required">
     Please enter {{ displayName }}
   </p>

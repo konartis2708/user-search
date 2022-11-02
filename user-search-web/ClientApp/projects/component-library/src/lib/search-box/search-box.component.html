@@ -4,4 +4,4 @@
   placeholder="Search for a user..."
   [formControl]="userSearch"
 />
-<lib-button [radiusRightOnly]="true">Go</lib-button>
+<lib-button [radiusRightOnly]="true" (clicked)="GoClicked()">Go</lib-button>

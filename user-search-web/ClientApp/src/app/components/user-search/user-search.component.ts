@@ -10,11 +10,13 @@ import { IUser } from 'src/app/types/user';
 })
 export class UserSearchComponent implements OnInit, OnDestroy {
   public subscriptions: Subscription[] = [];
-  public matchedUsers$: Observable<string[]>;
-  public users: IUser[] = [];
+  public autoCompleteResult$: Observable<string[]>;
+  public userResult$: Observable<IUser[]>;
+  public searchTerm: string = '';
 
   public constructor(private readonly userService: UserService) {
-    this.matchedUsers$ = userService.matchedUsers$;
+    this.autoCompleteResult$ = userService.autoCompleteResult$;
+    this.userResult$ = userService.userResult$;
    }
   
   public ngOnDestroy(): void {
@@ -24,58 +26,15 @@ export class UserSearchComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
-
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
-
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
-
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
-
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
-
-    this.users.push({
-      firstName: 'Adam',
-      lastName: 'Lawrence',
-      jobTitle: 'The Don',
-      phone: '0900 222 111',
-      email: 'test@test.com'
-    });
   }
 
   public SearchUsers(searchText: string) {
     this.subscriptions.push(this.userService.searchUsers(searchText).subscribe());
-    
+    this.searchTerm = searchText;
+  }
+
+  public GetUsers(match: string) {
+    this.subscriptions.push(this.userService.getUsers(match).subscribe());
   }
 
 }

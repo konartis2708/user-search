@@ -35,8 +35,14 @@ namespace user_search_core.Services
             return true;
         }
 
-        public IEnumerable<User> QueryUsers(string searchText)
+        public IEnumerable<User> QueryUsers(string searchText, bool includeAllFields)
         {
+            if (!includeAllFields)
+            {
+                // With more time I would have implemented data shapping on the API
+                return this.userRepository.QueryUsers(searchText).Select(u => new User(u.FirstName, u.LastName, string.Empty, string.Empty, string.Empty));
+            }
+
             return this.userRepository.QueryUsers(searchText);
         }
     }

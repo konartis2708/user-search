@@ -1,5 +1,8 @@
-<ul>
-  <li *ngFor="let result of results">
-    <a>{{ result }}</a>
-  </li>
-</ul>
+<div class="auto-complete-results" [hidden]="!results || !results.length">
+  <div
+    *ngFor="let result of results"
+    class="result-items"
+    [innerHtml]="result | searchResultHighlight: searchTerm"
+    (click)="OnSelected(result)"
+  ></div>
+</div>

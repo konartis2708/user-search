@@ -9,7 +9,7 @@ namespace user_search_data.Services
 {
     public interface IUserService
     {
-        public IEnumerable<User> QueryUsers(string searchText);
+        public IEnumerable<User> QueryUsers(string searchText, bool includeAllFields);
 
         public bool AddUser(User user);
     }

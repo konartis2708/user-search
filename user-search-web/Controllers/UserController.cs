@@ -15,9 +15,9 @@ public class UserController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<User> Get(string searchText)
+    public IEnumerable<User> Get([FromQuery]string searchText, [FromQuery]bool includeAllFields)
     {
-        return this.userService.QueryUsers(searchText);
+        return this.userService.QueryUsers(searchText, includeAllFields);
     }
 
     [HttpPost]

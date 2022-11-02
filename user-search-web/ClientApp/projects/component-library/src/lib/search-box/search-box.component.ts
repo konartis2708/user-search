@@ -10,6 +10,7 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
   @Output() public textChanged: EventEmitter<string> = new EventEmitter();
+  @Output() public searchStarted: EventEmitter<string> = new EventEmitter();
   public userSearch = new FormControl<string>(''); // strongly typed forms!
   public subscription?: Subscription;
   public constructor() { }
@@ -27,6 +28,10 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
       this.textChanged.emit(search);
     });
+  }
+
+  public GoClicked() {
+    this.searchStarted.emit(this.userSearch.value ?? '');
   }
 
 }

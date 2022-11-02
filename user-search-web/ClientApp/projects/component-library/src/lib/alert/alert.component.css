@@ -1,0 +1,9 @@
+:host {
+    background-color: var(--btn-bg-color);
+    color: var(--btn-text-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: .5rem;
+    font-size: .75rem;
+    box-shadow: 0.4rem 0.4rem 0.45rem rgba(0, 0, 30, 0.3);
+}

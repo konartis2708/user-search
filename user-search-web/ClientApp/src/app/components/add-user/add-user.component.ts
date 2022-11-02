@@ -14,11 +14,11 @@ public subscriptions: Subscription[] = [];
   public userFormGroup: FormGroup;
   constructor(private readonly formBuilder: FormBuilder, private readonly userService: UserService) { 
     this.userFormGroup = this.formBuilder.group({
-      firstName: ['', Validators.required, Validators.maxLength(50)],
-      lastName: ['', Validators.required,Validators.maxLength(50)],
-      jobTitle: ['', Validators.required, Validators.maxLength(50)],
-      phone: ['', Validators.required, Validators.maxLength(50)],
-      email: ['', Validators.required, Validators.email, Validators.maxLength(320)],
+      firstName: ['', [Validators.required, Validators.maxLength(50)]],
+      lastName: ['', [Validators.required,Validators.maxLength(50)]],
+      jobTitle: ['', [Validators.required, Validators.maxLength(50)]],
+      phone: ['', [Validators.required, Validators.maxLength(50)]],
+      email: ['', [Validators.required, Validators.maxLength(320), Validators.email]],
     });
   }
 
