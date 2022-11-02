@@ -18,7 +18,7 @@ public subscriptions: Subscription[] = [];
       firstName: ['', [Validators.required, Validators.maxLength(50)]],
       lastName: ['', [Validators.required,Validators.maxLength(50)]],
       jobTitle: ['', [Validators.required, Validators.maxLength(50)]],
-      phone: ['', [Validators.required, Validators.maxLength(50)]],
+      phone: ['', [Validators.required, Validators.maxLength(50), Validators.pattern("^[0-9]*$")]],
       email: ['', [Validators.required, Validators.maxLength(320), Validators.email], [uniqueEmailValidator(this.userService)]],
     });
   }

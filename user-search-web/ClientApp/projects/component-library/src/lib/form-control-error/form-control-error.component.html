@@ -1,6 +1,6 @@
 <div *ngIf="control && control.invalid && (control.dirty || control.touched)">
   <p class="error" *ngIf="control.errors?.required">
-    Please enter {{ displayName }}
+    Please enter a {{ displayName }}
   </p>
   <p class="error" *ngIf="control.errors?.maxLength">
     {{ displayName }} is too long
@@ -10,5 +10,8 @@
   </p>
   <p class="error" *ngIf="control.errors?.nonUniqueEmail">
     The {{ displayName }} you entered already exists
+  </p>
+  <p class="error" *ngIf="control.errors?.pattern">
+    The {{ displayName }} you entered is invalid
   </p>
 </div>
