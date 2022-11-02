@@ -32,4 +32,8 @@ export class AppComponent implements OnInit {
   public ToggleUserForm() {
     this.showAddUser = !this.showAddUser;
   }
+
+  public HideAlert() {
+    this.userService.clearAddUser();
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'lib-alert',
@@ -7,9 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AlertComponent implements OnInit {
   @Input() text!: string;
+  @Output() hideClicked: EventEmitter<void> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public HideAlert() {
+    this.hideClicked.emit();
   }
 
 }

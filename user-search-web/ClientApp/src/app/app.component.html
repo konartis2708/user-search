@@ -3,6 +3,7 @@
     <lib-alert
       *ngIf="newUserCreated$ | async"
       [text]="'New user added!'"
+      (hideClicked)="HideAlert()"
     ></lib-alert>
   </header>
   <div class="container">
