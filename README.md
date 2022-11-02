@@ -1,26 +1,8 @@
 # User Search
+## where to find the code
+- the solution for visual studio can be found in /user-search-web
+- the angular code can be found in /user-search-web/ClientApp
 
-## Implementation decisions
-
-### backend
--I opted for a structure that loosely resembles onion architecture, this way if I wanted to I could flip out the repository implementation easily, for cosmos DB, or SQL server, instead of its current implementation
-- I opted not to persists the data other than in memory, just due to time constraints
-
-### frontend
-- I would usually use angular material for this type of project, but opted to demonstrate building a small component library for this test
-- Components that are not specific to the business logic of the app can be found in the component library module
-- its setup like a mono repo due to time constraints
-
-## swagger
-you can access swagger to query the API directly:
-
-https://localhost:7063/swagger/index.html
-
-## unit tests
-I wrote a couple of small unit tests, including one for the auto complete pipe. you can run them either for the component library or app individually by running the following commands from the cientApp:
-
-npm run test component-library
-npm run test(this defaults to the app)
 ## acceptance criteria progress
  - UI is styled to spec = still needs some tidy up work on search button and add button when a large data set is returned
  - After a user types 2 characters, matches are suggested below the search input = Done
@@ -30,10 +12,27 @@ npm run test(this defaults to the app)
  - New searches return newly created user info = Done, also set it up to display newly created user after adding, but any future searches will return created users
  - Bonus: phone and email validation = Done basic number validation for phone, email validates front end and backend, frontend using built in angular and regex backend
  - Bonus: duplicates are rejected = Done custom validator is in place to reject duplicate email addresses, backend will also reject and return a 400 bad request, it allows duplicate First/Last name combinations
+ - 
+## Implementation decisions
+
+### backend
+- I opted for a structure that loosely resembles onion architecture, this way if I wanted to I could flip out the repository implementation easily, for cosmos DB, or SQL server, instead of its current implementation
+- I opted not to persists the data other than in memory, just due to time constraints
+
+### frontend
+- I would usually use angular material for this type of project, but opted to demonstrate building a small component library for this test
+- Components that are not specific to the business logic of the app can be found in the component library module
+
+## swagger
+you can access swagger to query the API directly once debugging here https://localhost:7063/swagger/index.html 
+
+## unit tests
+I wrote a couple of small unit tests, including one for the auto complete pipe. you can run them either for the component library or app individually by running the following commands from the cientApp:
+
+npm run test component-library
+npm run test(this defaults to the app)
 
 ## Known problems
-I using dotnet to generate an angular tempalte app, I was having some problems calling an API via the proxy it creates, so I enabled course and hard coded the api using that for now, needs further investigation
 
-Some UI issues: 
-- button to the right of search height.
+- button to the right of search height doesn't quite match sketch
 - add button does not hold its position when large dataset is returned
