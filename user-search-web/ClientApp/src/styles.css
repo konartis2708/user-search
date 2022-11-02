@@ -15,6 +15,14 @@
   --error-color:#bc1546
 }
 
+body,html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--background-color);
   color: var(--primary-text-color);
@@ -59,7 +67,6 @@ button:active {
   border: none;
   border-radius: var(--border-radius);
   padding: .5rem;
-  font-size: .75rem;
   box-shadow: 0.4rem 0.4rem 0.45rem rgba(0, 0, 30, 0.3);
 }
 
@@ -101,7 +108,6 @@ footer {
   z-index: 1;
   margin-top: .5rem;
   padding: 1rem;
-  font-size: .75rem;
   border: solid 1px var(--border-color);
   width: 100%;
 }
