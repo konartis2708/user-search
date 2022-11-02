@@ -1,11 +1,11 @@
-<body>
-  <header>
-    <lib-alert
-      *ngIf="newUserCreated$ | async"
-      [text]="'New user added!'"
-      (hideClicked)="HideAlert()"
-    ></lib-alert>
-  </header>
+<header>
+  <lib-alert
+    *ngIf="newUserCreated$ | async"
+    [text]="'New user added!'"
+    (hideClicked)="HideAlert()"
+  ></lib-alert>
+</header>
+<div class="content">
   <div class="container">
     <app-user-search></app-user-search>
     <app-add-user *ngIf="showAddUser"></app-add-user>
@@ -13,4 +13,4 @@
       <lib-button (clicked)="ToggleUserForm()">New User +</lib-button>
     </footer>
   </div>
-</body>
+</div>

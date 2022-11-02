@@ -20,7 +20,12 @@ body {
   color: var(--primary-text-color);
   display:flex;
   flex-direction: column;
-  height: 100vh;
+  
+}
+.content {
+  display:flex;
+  flex-direction: column;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 }
