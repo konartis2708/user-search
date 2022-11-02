@@ -1,4 +1,7 @@
 # User Search
+## where to find the code
+-the api project can be found in /user-search-web
+- the angular code can be found in /user-search-web/ClientApp
 
 ## acceptance criteria progress
  - UI is styled to spec = still needs some tidy up work on search button and add button when a large data set is returned
