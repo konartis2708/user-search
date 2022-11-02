@@ -25,7 +25,12 @@ namespace user_search_core.Services
                 return false;
             }
 
-            if (!Validators.IsValidEmail(user.Email))
+            if (!this.IsEmailUnique(user.Email))
+            {
+                return false;
+            }
+
+            if (!Validators.IsValidPhone(user.Email))
             {
                 return false;
             }
@@ -33,6 +38,11 @@ namespace user_search_core.Services
             userRepository.AddUser(user);
 
             return true;
+        }
+
+        public bool IsEmailUnique(string email)
+        {
+            return this.userRepository.IsEmailUnique(email);
         }
 
         public IEnumerable<User> QueryUsers(string searchText, bool includeAllFields)

@@ -8,4 +8,7 @@
   <p class="error" *ngIf="control.errors?.email">
     Please enter a valid {{ displayName }}
   </p>
+  <p class="error" *ngIf="control.errors?.nonUniqueEmail">
+    The {{ displayName }} you entered already exists
+  </p>
 </div>

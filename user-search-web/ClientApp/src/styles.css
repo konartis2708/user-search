@@ -36,6 +36,9 @@ header {
   width: 65vw;
 }
 
+input:focus{
+  outline: none;
+}
 
 .btn-primary {
   background-color: var(--btn-bg-color);

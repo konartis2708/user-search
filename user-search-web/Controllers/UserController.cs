@@ -6,28 +6,17 @@ namespace user_search_web.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class EmailController : ControllerBase
 {
     private readonly IUserService userService;
-    public UserController(IUserService userService)
+    public EmailController(IUserService userService)
     {
         this.userService = userService;
     }
 
     [HttpGet]
-    public IEnumerable<User> Get([FromQuery]string searchText, [FromQuery]bool includeAllFields)
+    public bool ValidateEmail([FromQuery]string email)
     {
-        return this.userService.QueryUsers(searchText, includeAllFields);
-    }
-
-    [HttpPost]
-    public IActionResult AddUser(User user)
-    {
-        if (!this.userService.AddUser(user))
-        {
-            return BadRequest();
-        }
-
-        return StatusCode(Microsoft.AspNetCore.Http.StatusCodes.Status201Created);
+        return this.userService.IsEmailUnique(email);
     }
 }

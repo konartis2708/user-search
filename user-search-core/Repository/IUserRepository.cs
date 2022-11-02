@@ -13,6 +13,6 @@ namespace user_search_data.Repository
 
         public void AddUser(User user);
 
-
+        bool IsEmailUnique(string email);
     }
 }

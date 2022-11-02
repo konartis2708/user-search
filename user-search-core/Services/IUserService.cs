@@ -12,5 +12,7 @@ namespace user_search_data.Services
         public IEnumerable<User> QueryUsers(string searchText, bool includeAllFields);
 
         public bool AddUser(User user);
+
+        public bool IsEmailUnique(string email);
     }
 }

@@ -26,6 +26,11 @@ namespace user_search_data.Repository
             users.Add(user);
         }
 
+        public bool IsEmailUnique(string email)
+        {
+            return !users.Any(u => u.Email.Equals(email, StringComparison.InvariantCultureIgnoreCase));
+        }
+
         public IEnumerable<User> QueryUsers(string searchText)
         {
            var exactMatch = users.Where(u => $"{u.FirstName} {u.LastName}" == searchText);

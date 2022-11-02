@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 import { IUser } from 'src/app/types/user';
+import { uniqueEmailValidator } from 'src/app/validators/unique-email-validator';
 
 @Component({
   selector: 'app-add-user',
@@ -18,7 +19,7 @@ public subscriptions: Subscription[] = [];
       lastName: ['', [Validators.required,Validators.maxLength(50)]],
       jobTitle: ['', [Validators.required, Validators.maxLength(50)]],
       phone: ['', [Validators.required, Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.maxLength(320), Validators.email]],
+      email: ['', [Validators.required, Validators.maxLength(320), Validators.email], [uniqueEmailValidator(this.userService)]],
     });
   }
 
