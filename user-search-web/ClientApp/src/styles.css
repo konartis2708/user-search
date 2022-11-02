@@ -34,10 +34,16 @@ header {
   flex-direction: column;
   flex-grow: 1;
   width: 65vw;
+  position: relative;
 }
 
 input:focus{
   outline: none;
+}
+
+button:active {
+  outline: none;
+  background-color: var(--btn-bg-color);
 }
 
 .btn-primary {
@@ -52,8 +58,8 @@ input:focus{
 
 .radius-right-only {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .btn-primary:hover {
@@ -90,7 +96,7 @@ footer {
   padding: 1rem;
   font-size: .75rem;
   border: solid 1px var(--border-color);
-  width: 53vw;
+  width: 100%;
 }
 
 .result-items {

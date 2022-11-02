@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
-import { IUser } from 'src/app/types/user';
 import { uniqueEmailValidator } from 'src/app/validators/unique-email-validator';
 
 @Component({

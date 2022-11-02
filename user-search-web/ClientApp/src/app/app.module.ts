@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { UserSearchComponent } from './components/user-search/user-search.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { ComponentLibraryModule } from 'projects/component-library/src/public-api';
-import { CommonModule } from '@angular/common';
+import { APP_BASE_HREF, CommonModule } from '@angular/common';
 import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
@@ -26,7 +26,9 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     ReactiveFormsModule,
     ComponentLibraryModule
   ],
-  providers: [],
+  providers: [
+    {provide: APP_BASE_HREF, useValue: 'https://localhost:7063/'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
       if (user) {
         this.ToggleUserForm();
       }
-      setTimeout(() => {this.userService.clearAddUser()}, 10000);
+      setTimeout(() => {this.userService.clearAddUser()}, 5000);
     }
     ));
   }

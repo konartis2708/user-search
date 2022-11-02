@@ -1,5 +1,6 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, Observable, of, Subject, tap } from 'rxjs';
 // import { UsersBuilder } from '../builders/users.builder';
 import { IUser } from '../types/user';
@@ -14,12 +15,11 @@ export class UserService {
   public autoCompleteResult$: Observable<string[]>;
   public userResult$: Observable<IUser[]>;
   public newUserCreated$: Observable<IUser | undefined>;
-  private readonly apiUrl: string;
   private autoCompleteResultSubject: BehaviorSubject<string[]>;
   private userResultSubject: BehaviorSubject<IUser[]>;
   private userCreatedSubject: Subject<IUser | undefined> = new Subject();
-  public constructor(private readonly httpClient: HttpClient) { 
-    this.apiUrl = `https://localhost:7063/`;
+  public constructor(private readonly httpClient: HttpClient, @Inject(APP_BASE_HREF) private readonly apiUrl: string) { 
+    
     const defaultValue: string[] = [];
     this.autoCompleteResultSubject = new BehaviorSubject(defaultValue);
 
@@ -64,7 +64,7 @@ export class UserService {
     .pipe(tap(() => {
       this.autoCompleteResultSubject.next([]);
       this.userCreatedSubject.next(user);
-      this.userResultSubject.next([user]);
+      // this.userResultSubject.next([user]); not required in AC
     }),
       catchError((error) => {
       console.error(error)

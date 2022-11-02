@@ -13,11 +13,18 @@
     border-radius: var(--border-radius);
     border-style: solid;
     border-color: lightgray;
-    width: 100%
+    width: 100%;
+    padding: .5rem;
 }
 
 .form-footer {
     display:flex;
     justify-content: center;
     margin-bottom: 1rem;
+}
+
+.add-user-form {
+    flex-grow: 1;
+    padding: 1rem;
+    padding-top: 0px;
 }
